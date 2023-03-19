@@ -1,9 +1,21 @@
 {
-    "name": "laravel/laravel",
+    "name": "cxj/looking-glass",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "description": "Central monitor and display for status data from remote sources",
+    "keywords": [
+        "cxj",
+        "laravel",
+        "looking-glass"
+    ],
+    "homepage": "https://github.com/cxj/looking-glass",
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Chris Johnson",
+            "email": "cxjohnson@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HealthDashboard;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +20,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Need to be both authenticated and verified for these.
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/health', HealthCheckResultsController::class)->name('health');
+    Route::get('/dashboard', HealthDashboard::class)->name('dashboard');
 });
 
-require __DIR__.'/auth.php';
+// You can get to your profile without being verified.
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name(
+        'profile.edit'
+    );
+    Route::patch('/profile', [ProfileController::class, 'update'])->name(
+        'profile.update'
+    );
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name(
+        'profile.destroy'
+    );
+});
+
+
+//
+// Laravel Breeze's pile of routes.  ToDo: prune to those we use.
+require __DIR__ . '/auth.php';

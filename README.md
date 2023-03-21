@@ -58,7 +58,8 @@ Example JSON payload:
 	}
 }
 ```
-
+If you wish to use Looking Glass to monitor Laravel applications, take a look at the
+[Laravel Looking Glass Client](https://github.com/cxj/laravel-looking-glass-client) package.
 
 ## Testing
 

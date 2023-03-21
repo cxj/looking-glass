@@ -19,14 +19,15 @@ Glass itself.
 * Ensure cross-platform compatibility for every change that's accepted. Windows,
   Mac, Debian & Ubuntu Linux.
 * Ensure that code that goes into core meets all requirements in this
-  checklist: https://gist.github.com/TBD
+  checklist: TBD
 * Create issues for any major changes and enhancements that you wish to make.
   Discuss things transparently and get community feedback.
 * Keep feature versions as small as possible, preferably one new feature per
   version.
 * Be welcoming to newcomers and encourage diverse new contributors from all
   backgrounds. See
-  the [Python Community Code of Conduct](https://www.python.org/psf/codeofconduct/).
+  the [Python Community Code of Conduct](https://www.python.org/psf/codeofconduct/)
+  as a general example.
 
 ## Your First Contribution
 

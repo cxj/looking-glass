@@ -11,21 +11,53 @@ listing all configured application checks and their current status. Any
 application capable of calling an HTTP webhook can communicate its status
 data to Looking Glass for presentation.
 
+## Requirements
+
+A PHP 8 host with access to a reasonable SQL database, preferably MySQL or equivalent.
+
 ## Installation
 
-You can install the package via composer:
+Install the package via composer:
 
 ```bash
 composer require cxj/looking-glass
 ```
 
-You can run the migrations with:
+Run the migrations with:
 
 ```bash
 php artisan migrate
 ```
 
 ## Usage
+
+This is early beta software.  More functionality and documentation to come.
+
+* User accounts are by default open registration to all at the `/register` URL path.  You will probably want to
+implement some sort of restrictions on potential users.
+* Create a user account and log in to see the current status dashboard.
+* The Laravel schedule worker (e.g. `artisan schedule:work`) needs to be run regularly via cron or similar mechanism
+
+* Makes use of the Spatie Laravel Health package, see Spatie's fine documentation for more details.
+* Makes use of the Spatie Webhook Client package, see Spatie's project for more details.  One can easily send webhook
+calls to Looking Glass using the Spatie Webhook Server package.  The JSON payload is simple as is the bearer token
+authentication.  Just about any software should be able to successfully call the Looking Glass webhook to deliver
+status payloads.
+
+Example JSON payload:
+```json
+{
+	"name": "Test-app",
+	"label": "Test-label",
+	"result": {
+		"meta": [],
+		"ended_at": "",
+		"status": "ok",
+		"notificationMessage": "notification-message",
+		"shortSummary": "short-summary"
+	}
+}
+```
 
 
 ## Testing

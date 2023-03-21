@@ -25,13 +25,6 @@ You can run the migrations with:
 php artisan migrate
 ```
 
-This is the contents of the published file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
 
@@ -62,5 +55,5 @@ security vulnerabilities.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more
-information.
+The GNU Affero General Public License Version 3. Please see
+[License File](LICENSE.md) for more information.

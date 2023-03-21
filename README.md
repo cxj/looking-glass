@@ -13,7 +13,7 @@ data to Looking Glass for presentation.
 
 ## Requirements
 
-A PHP 8 host with access to a reasonable SQL database, preferably MySQL or equivalent.
+A PHP 8.1+ host with access to a reasonable SQL database, preferably MySQL or equivalent.
 
 ## Installation
 

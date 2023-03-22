@@ -19,7 +19,7 @@ jobs:
         # Docker Hub image (also with version)
         image: mysql:latest
         env:
-          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          MYSQL_ROOT_PASSWORD: foobarbaz
           MYSQL_DATABASE:  db_test_looking_glass
         ## map the "external" 33306 port with the "internal" 3306
         ports:
@@ -92,7 +92,7 @@ jobs:
         DB_DATABASE: db_test_looking_glass
         DB_PORT: 33306
         DB_USER: root
-        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_PASSWORD: foobarbaz
 
       run: php artisan migrate
 
@@ -113,6 +113,6 @@ jobs:
         DB_DATABASE: db_test_looking_glass
         DB_PORT: 33306
         DB_USER: root
-        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_PASSWORD: foobarbaz
 
       run: vendor/bin/pest

@@ -89,6 +89,7 @@ jobs:
         DB_DATABASE: db_test_laravel
         DB_PORT: 33306
         DB_USER: root
+        DB_USERNAME: root
 
       run: php artisan migrate
 
@@ -106,6 +107,7 @@ jobs:
         DB_DATABASE: db_test_laravel
         DB_PORT: 33306
         DB_USER: root
+        DB_USERNAME: root
 
       run: vendor/bin/pest
 

@@ -39,7 +39,6 @@ Route::middleware('auth')->group(function () {
     );
 });
 
-
 //
 // Laravel Breeze's pile of routes.  ToDo: prune to those we use.
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
